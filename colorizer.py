@@ -41,7 +41,7 @@ class Colorizer:
         prevFrameTime = time.time()
         nextFrameTime = 0
 
-        out = cv2.VideoWriter(join("output", splitext(basename(videoName))[0] + '.avi'),
+        out = cv2.VideoWriter(join("./video-colorizer/output", splitext(basename(videoName))[0] + '.avi'),
         cv2.VideoWriter_fourcc(*"MJPG"), cap.get(cv2.CAP_PROP_FPS), (self.width * 2, self.height), True)
 
         while success:
