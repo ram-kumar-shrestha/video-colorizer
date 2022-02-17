@@ -24,7 +24,7 @@ class Colorizer:
         self.img = cv2.resize(self.img, (self.width, self.height))
 
         self.processFrame()
-        cv2.imwrite(join("output", basename(imgName)), self.imgFinal)
+        cv2.imwrite(join("./video-colorizer/output", basename(imgName)), self.imgFinal)
 
         cv2.imshow("output", self.imgFinal)
 
