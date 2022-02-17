@@ -45,6 +45,7 @@ class Colorizer:
         cv2.VideoWriter_fourcc(*"MJPG"), cap.get(cv2.CAP_PROP_FPS), (self.width * 2, self.height), True)
 
         while success:
+            print("colorizing frame")
             self.img = cv2.resize(self.img, (self.width, self.height))
 
             ## testing each input frame
