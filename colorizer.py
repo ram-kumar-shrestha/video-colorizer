@@ -47,7 +47,7 @@ class Colorizer:
 
         while success:
             print("colorizing frame" + count)
-            count++
+            count += 1
             
             self.img = cv2.resize(self.img, (self.width, self.height))
 
