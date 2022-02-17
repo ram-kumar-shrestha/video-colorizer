@@ -9,10 +9,10 @@ class Colorizer:
     def __init__(self, height=480, width=600):
         (self.height, self.width) = height, width
 
-        self.colorModel = cv2.dnn.readNetFromCaffe('./models/colorization_deploy_v2.prototxt', caffeModel = "./models/colorization_release_v2.caffemodel")
+        self.colorModel = cv2.dnn.readNetFromCaffe('./video-colorizer/models/colorization_deploy_v2.prototxt', caffeModel = "./video-colorizer/models/colorization_release_v2.caffemodel")
         
 
-        clusterCenters = np.load("./models/pts_in_hull.npy")
+        clusterCenters = np.load("./video-colorizer/models/pts_in_hull.npy")
         clusterCenters = clusterCenters.transpose().reshape(2,313,1,1)
 
         self.colorModel.getLayer(self.colorModel.getLayerId('class8_ab')).blobs = [clusterCenters.astype(np.float32)]
