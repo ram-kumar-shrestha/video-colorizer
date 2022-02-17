@@ -54,19 +54,7 @@ class Colorizer:
 
             out.write(self.imgFinal)
             
-            # FPS calculation
-            nextFrameTime = time.time()
-            fps = 1/(nextFrameTime - prevFrameTime) 
-            prevFrameTime = nextFrameTime
-  
-            fps = "FPS:" + str(int(fps))
-
-            # showing FPS on video
-            cv2.putText(self.imgFinal, fps, (5,25), cv2.FONT_HERSHEY_SIMPLEX, 1, 
-            (255,255,255), 2, cv2.LINE_AA)
-
-            # colorized frame
-            cv2.imshow("output", self.imgFinal)
+            
 
             key = cv2.waitKey(1) & 0xFF
             if key == ord('q'):
