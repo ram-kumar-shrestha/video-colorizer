@@ -30,6 +30,7 @@ class Colorizer:
 
     # colorize video
     def processVideo(self, videoName):
+        count = 1
         cap = cv2.VideoCapture(videoName)
 
         if(cap.isOpened() == False):
@@ -45,7 +46,9 @@ class Colorizer:
         cv2.VideoWriter_fourcc(*"MJPG"), cap.get(cv2.CAP_PROP_FPS), (self.width * 2, self.height), True)
 
         while success:
-            print("colorizing frame")
+            print("colorizing frame" + count)
+            count++
+            
             self.img = cv2.resize(self.img, (self.width, self.height))
 
             ## testing each input frame
